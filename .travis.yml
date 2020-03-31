@@ -8,8 +8,6 @@ os:
 env:
     global:
         - BLENDER_CACHE=$HOME/.cache/blender
-        - VENV_CACHE=$HOME/.cache/venv
-        - PYTHON_REV=3.7.5
         - BL_ADDON=fake_addon
     matrix:
         - BLENDER_VERSION="2.78c"
@@ -42,15 +40,14 @@ install:
     - cd $TRAVIS_BUILD_DIR
     - python3 --version
     - pip install -r blender_requirements.txt
+    - pip list
 
 script:
     - cd ${TRAVIS_BUILD_DIR}
     - python3 ${TRAVIS_BUILD_DIR}/scripts/test_addon.py ${BLENDER_VERSION} ${BL_ADDON}
-    - ls
-    - bash <(curl -s https://codecov.io/bash)
 
-#after_success:
-#    - codecov -f tests_output/coverage.xml
+after_success:
+    - bash <(curl -s https://codecov.io/bash)
 
 notifications:
     email:
