@@ -6,8 +6,8 @@ on:
     - cron: '0 0 * * *'
 
 jobs:
-  env:
-    BL_ADDON: "fake-addon"
+#   env:
+#     BL_ADDON: "fake-addon"
   build:
     runs-on: ${{ matrix.os }}
     strategy:
@@ -37,4 +37,4 @@ jobs:
 
     - name: Test Blender ${{ matrix.blender-version }} with pytest
       run: |
-        python scripts/test_addon.py ${{ BL_ADDON }} ${{ matrix.blender-version }}
+        python scripts/test_addon.py fake_addon ${{ matrix.blender-version }}
