@@ -20,9 +20,9 @@ or you can install it explicltly:
 
 ## fake-addon
 
-The addon included here, fake-addon, is the most basic addon possible.  All it does is print out a message when it is installed and another one when it is removed.  
+The addon included here, `fake-addon`, is the most basic addon possible.  All it does is print out a message when it is installed and another one when it is removed.  
 
-However all addons are required to have version tuple.  This version ID of the addon can be read back through blender via python.  This is the test we use:
+However all addons are required to have version tuple.  This version ID of the addon can be read back through blender via python.  This is the test we use, written in `pytest` format:
 
 ```
     expect_version = (0, 0, 1)
@@ -34,7 +34,7 @@ In the current release, there are two tests, one to check that the right value g
 
 ## Usage
 
-Once blender-addon-tester is installed 
+Once `blender-addon-tester` is installed 
 
 ```
     import blender_addon_tester as BAT
@@ -45,7 +45,7 @@ where the name of the addon and the version of blender you wish to use is passed
 
 If the blender version has not been found locally it will download the most up to date version. Unpack and update that verison of blender to install the test harness modules.  
 
-Then it installs the addon into this version of blender. 
+Then it installs the addon into this version of blender, in this case `fake_addon`. 
 
 The test suite is executed. 
 
