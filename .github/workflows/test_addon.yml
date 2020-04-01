@@ -6,16 +6,22 @@ on:
     - cron: '0 0 * * *'
 
 jobs:
+#   env:
+#     BL_ADDON: "fake-addon"
   build:
-
     runs-on: ${{ matrix.os }}
     strategy:
       max-parallel: 4
       matrix:
+<<<<<<< HEAD:.github/workflows/pythonpackage.yml
         blender-version: ["2.79b", "2.80", "2.81a", "2.82", "2.83"]
         os: [ubuntu-latest, windows-latest]
         #blender-version: ["2.80"]
         #os: [ubuntu-latest, windows-latest, macos-latest]
+=======
+        blender-version: ["2.78c", "2.79b", "2.80", "2.81a", "2.82a", "2.83"]
+        os: [ubuntu-latest, windows-latest, macos-latest]
+>>>>>>> master:.github/workflows/test_addon.yml
 
     steps:
     - uses: actions/checkout@v1
@@ -27,8 +33,8 @@ jobs:
       run: |
         python --version
         python -m pip install --upgrade pip
-        pip install -r scripts/requirements.txt
-        yolk -l
+        pip install -r blender_requirements.txt
+        pip list
 
     - name: Set up System Blender
       if: startsWith(matrix.os, 'ubuntu')
@@ -36,9 +42,6 @@ jobs:
         sudo apt update
         sudo apt install -f -y blender
 
-    - name: Download Blender ${{ matrix.blender-version }}
-      run: |
-        python scripts/get_blender.py ${{ matrix.blender-version }}
     - name: Test Blender ${{ matrix.blender-version }} with pytest
       run: |
-        python scripts/run_blender.py ${{ matrix.blender-version }}
+        python scripts/test_addon.py fake_addon ${{ matrix.blender-version }}

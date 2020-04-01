@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 pip
 yolk3k
 pytest
 coverage
 pytest-cov
 #zipp==2.1.0
+=======
+blender-addon-tester
+>>>>>>> master
