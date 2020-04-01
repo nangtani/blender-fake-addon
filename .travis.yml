@@ -10,7 +10,7 @@ env:
         - BLENDER_CACHE=$HOME/.cache/blender
         - BL_ADDON=fake_addon
     matrix:
-        #- BLENDER_VERSION="2.78c"
+        - BLENDER_VERSION="2.78c"
         - BLENDER_VERSION="2.79b"
         - BLENDER_VERSION="2.80"
         - BLENDER_VERSION="2.81a"
@@ -35,15 +35,6 @@ addons:
 before_install:
     - mkdir -p ${BLENDER_CACHE}
     - ls ${BLENDER_CACHE}
-<<<<<<< HEAD
-    - mkdir -p ${VENV_CACHE}
-    - source ${TRAVIS_BUILD_DIR}/scripts/get_python.sh
-    - pip install -U pip
-    - pip install -r ${TRAVIS_BUILD_DIR}/scripts/requirements.txt --upgrade
-    #- yolk -l
-    - pip list
-=======
->>>>>>> master
 
 install:
     - cd $TRAVIS_BUILD_DIR
@@ -53,15 +44,10 @@ install:
 
 script:
     - cd ${TRAVIS_BUILD_DIR}
-<<<<<<< HEAD
-    #- ../blender-${BLENDER_VERSION}/blender --version
-    - python ${TRAVIS_BUILD_DIR}/scripts/run_blender.py ${BLENDER_VERSION}
-=======
     #- make flake8
     - python3 ${TRAVIS_BUILD_DIR}/scripts/test_addon.py ${BL_ADDON} ${BLENDER_VERSION}
     
 after_success:
->>>>>>> master
     - bash <(curl -s https://codecov.io/bash)
 
 notifications:
