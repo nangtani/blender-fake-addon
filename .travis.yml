@@ -14,7 +14,7 @@ env:
         - BLENDER_VERSION="2.79b"
         - BLENDER_VERSION="2.80"
         - BLENDER_VERSION="2.81a"
-        - BLENDER_VERSION="2.82"
+        - BLENDER_VERSION="2.82a"
         - BLENDER_VERSION="2.83"
 
 language: python
@@ -45,8 +45,8 @@ install:
 script:
     - cd ${TRAVIS_BUILD_DIR}
     #- make flake8
-    - python3 ${TRAVIS_BUILD_DIR}/scripts/test_addon.py ${BLENDER_VERSION} ${BL_ADDON}
-
+    - python3 ${TRAVIS_BUILD_DIR}/scripts/test_addon.py ${BL_ADDON} ${BLENDER_VERSION}
+    
 after_success:
     - bash <(curl -s https://codecov.io/bash)
 
