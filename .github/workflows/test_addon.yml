@@ -13,15 +13,8 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-<<<<<<< HEAD:.github/workflows/pythonpackage.yml
-        blender-version: ["2.79b", "2.80", "2.81a", "2.82", "2.83"]
-        os: [ubuntu-latest, windows-latest]
-        #blender-version: ["2.80"]
-        #os: [ubuntu-latest, windows-latest, macos-latest]
-=======
-        blender-version: ["2.78c", "2.79b", "2.80", "2.81a", "2.82a", "2.83"]
-        os: [ubuntu-latest, windows-latest, macos-latest]
->>>>>>> master:.github/workflows/test_addon.yml
+      blender-version: ["2.78c", "2.79b", "2.80", "2.81a", "2.82a", "2.83"]
+      os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
     - uses: actions/checkout@v1
