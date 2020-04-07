@@ -1,6 +1,6 @@
-[![Travis Build Status](https://travis-ci.org/douglaskastle/blender-fake-addon.svg?branch=master)](https://travis-ci.org/douglaskastle/blender-fake-addon)
-[![Github Build Status](https://github.com/douglaskastle/blender-fake-addon/workflows/blender-fake-addon/badge.svg)](https://github.com/douglaskastle/blender-fake-addon/actions)
-[![codecov](https://codecov.io/gh/douglaskastle/blender-fake-addon/branch/master/graph/badge.svg)](https://codecov.io/gh/douglaskastle/blender-fake-addon)
+[![Travis Build Status](https://travis-ci.org/nangtani/blender-fake-addon.svg?branch=master)](https://travis-ci.org/nangtani/blender-fake-addon)
+[![Github Build Status](https://github.com/nangtani/blender-fake-addon/workflows/blender-fake-addon/badge.svg)](https://github.com/nangtani/blender-fake-addon/actions)
+[![codecov](https://codecov.io/gh/nangtani/blender-fake-addon/branch/master/graph/badge.svg)](https://codecov.io/gh/nangtani/blender-fake-addon)
 
 # blender-fake-addon
 
