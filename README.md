@@ -16,7 +16,7 @@ or you can install it explicltly:
 
 `pip install blender-addon-tester`
 
-[blender-addon-tester is hosted on github](https://github.com/douglaskastle/blender-addon-tester)
+[blender-addon-tester is hosted on github](https://github.com/nangtani/blender-addon-tester)
 
 ## fake-addon
 
