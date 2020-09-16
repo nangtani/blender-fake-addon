@@ -1,16 +1,15 @@
-name: blender-fake-addon
+name: test-addon
 
 on: 
   push:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 2 * * *'
 
 jobs:
-#   env:
-#     BL_ADDON: "fake-addon"
   build:
     runs-on: ${{ matrix.os }}
     strategy:
+      #bl-addon: ["fake-addon"]
       max-parallel: 4
       matrix:
         blender-version: ["2.91", "2.90", "2.83", "2.82", "2.81", "2.80", "2.79"]
@@ -37,4 +36,4 @@ jobs:
 
     - name: Test Blender ${{ matrix.blender-version }} with pytest
       run: |
-        python scripts/test_addon.py fake_addon ${{ matrix.blender-version }}
+        python scripts/test_addon.py fake-addon ${{ matrix.blender-version }}
