@@ -36,4 +36,4 @@ jobs:
 
     - name: Test Blender ${{ matrix.blender-version }} with pytest
       run: |
-        python scripts/test_addon.py fake-addon ${{ matrix.blender-version }}
+        python scripts/test_addon.py fake_addon ${{ matrix.blender-version }}
